@@ -1,0 +1,13 @@
+dbt_test_drive: # this needs to match the profile in your dbt_project.yml file
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      keyfile: D:/Pratham/MDA/A/Databases II/Project/dbt-test-drive/dbt_user_creds.json # replace this with the full path to your keyfile
+      project: databases2 # Replace this with your project id
+      dataset: dbt_pratham # Replace this with dbt_your_name, e.g. dbt_bilbo
+      threads: 1
+      timeout_seconds: 300
+      location: US
+      priority: interactive
